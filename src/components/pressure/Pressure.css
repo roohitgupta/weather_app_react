@@ -1,0 +1,19 @@
+.pre-hum {
+    width: 90%;
+    height: 80px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card {
+    background-color: rgb(196, 226, 238);
+    border-radius: 5px;
+    width: 47%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

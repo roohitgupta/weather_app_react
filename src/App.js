@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Sunrise from "./components/Sunrise";
+import Sunrise from "./components/sunrise/Sunrise";
 import Searchbox from "./components/searchbox/Searchbox";
-import Pressure from "./components/Pressure";
+import Pressure from "./components/pressure/Pressure";
 import Graph from "./components/graph/Graph";
 import Pasdays from "./components/pastDays/Pastdays";
 import "./App.css"
@@ -63,6 +63,8 @@ const App = () => {
        <Searchbox />
        <Pasdays daily={daily} />
        <Graph />
+       <Pressure />
+       <Sunrise />
       </div>
     </div>
 
