@@ -1,9 +1,11 @@
 import React from 'react'
+import "./Graph.css"
+import ApexCharts from 'apexcharts'
 
 const graph = () => {
   return (
-    <div>
-      graphs
+    <div className='graph'>
+      
       
     </div>
   )
