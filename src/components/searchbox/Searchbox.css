@@ -1,0 +1,23 @@
+
+
+.container {
+    height: 30px;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
+.search-tag {
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: large;
+    
+    
+}
