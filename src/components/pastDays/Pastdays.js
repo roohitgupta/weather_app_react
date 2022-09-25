@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Pastdays.css";
+import Pressure from "../pressure/Pressure";
 
 const Pastdays = ({ daily }) => {
-  //   console.log(props.daily[0]);
-
-  // {
-  //       ("10D" ? "https://weatherapp-swanand.netlify.app/img/cloudy.ac49ed24.svg" : "https://weatherapp-swanand.netlify.app/img/sunny.ef428e2d.svg")
-  // }
-
+ 
   const weatherIcon = {
-      Rain: "https://weatherapp-swanand.netlify.app/img/cloudy.ac49ed24.svg",
-      Clear: "https://weatherapp-swanand.netlify.app/img/sunny.ef428e2d.svg",
+    Rain: "https://weatherapp-swanand.netlify.app/img/cloudy.ac49ed24.svg",
+    Clear: "https://weatherapp-swanand.netlify.app/img/sunny.ef428e2d.svg",
   };
 
+  const [selectedDay, setSelectedDay] = useState({});
+
+  useEffect(() => {
+      setSelectedDay(daily[0]);
+  }, [daily]);
+
   return (
-    <div className="days-container">
-     
+    <>
+      <div className="days-container">
         {daily?.map((day) => (
-          <div key={JSON.stringify(day)} className="days-box">
+          <div
+            key={JSON.stringify(day)}
+            className="days-box"
+            onClick={()=>setSelectedDay(day)}
+          >
             <p>
               <b>Sun</b>
             </p>
@@ -32,8 +38,9 @@ const Pastdays = ({ daily }) => {
             <h5>{day.weather[0]?.main}</h5>
           </div>
         ))}
-      
-    </div>
+      </div>
+      <Pressure data={selectedDay} />
+    </>
   );
 };
 

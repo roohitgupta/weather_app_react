@@ -62,8 +62,7 @@ const App = () => {
       <div className='main-container'>
        <Searchbox />
        <Pasdays daily={daily} />
-       <Graph />
-       <Pressure />
+       {/* <Graph /> */}
        <Sunrise />
       </div>
     </div>
