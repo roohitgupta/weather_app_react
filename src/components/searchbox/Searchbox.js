@@ -7,11 +7,12 @@ import { BiSearchAlt2 } from "react-icons/bi";
 const Searchbox = () => {
   const [search, setSearch] = useState("");
   const [daily, setDaily] = useState([]);
+  const [hourly, setHourly] = useState([]);
   const [lat, setLat] = useState(0); 
   const [lon, setLon] = useState(0); 
 
-  console.log("lat:", lat)
-  console.log("lon:", lon)
+  // console.log("lat:", lat)
+  // console.log("lon:", lon)
 
 
   async function fetchReq(lat, lon){
@@ -20,6 +21,7 @@ const Searchbox = () => {
       const data = await res.json();
       console.log(data)
       setDaily(data.daily)
+      setHourly(data.hourly)
     } catch (error) {
       console.log(error)
     }
@@ -32,7 +34,7 @@ const Searchbox = () => {
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=2510dcb54be9c1632e1872eedae0921c`);
     const data = await response.json(); // Here you have the data that you need
     if (data) {
-      console.log(data.coord)
+      // console.log(data.coord)
       setLat(data.coord.lat)
       setLon(data.coord.lon)
     }
@@ -56,7 +58,7 @@ const Searchbox = () => {
         <BiSearchAlt2 />
       </div>
     </div>
-      <Pastdays daily={daily} />
+      <Pastdays daily={daily} hourly={hourly} />
     </>
   );
 };

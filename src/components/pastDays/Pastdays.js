@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Pastdays.css";
 import Pressure from "../pressure/Pressure";
+import moment from 'moment';
 
-const Pastdays = ({ daily }) => {
+const Pastdays = ({ daily, hourly }) => {
  
   const weatherIcon = {
     Rain: "https://weatherapp-swanand.netlify.app/img/cloudy.ac49ed24.svg",
@@ -11,10 +12,6 @@ const Pastdays = ({ daily }) => {
   };
 
   const [selectedDay, setSelectedDay] = useState({});
-
-  const weekDaysArray = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
-  const [weekDay, setWeekDay] = useState("");
-
   
 
   useEffect(() => {
@@ -31,7 +28,7 @@ const Pastdays = ({ daily }) => {
             onClick={()=>setSelectedDay(day)}
           >
             <p>
-              <b>Sun</b>
+              <b>{moment.unix(day.sunrise).format('ddd')}</b>
             </p>
             <h5>
               <span>{Math.round(day.temp?.max)}&#176;</span>, <span>{Math.round(day.temp?.min)}&#176;</span>
@@ -45,7 +42,7 @@ const Pastdays = ({ daily }) => {
           </div>
         ))}
       </div>
-      <Pressure data={selectedDay} />
+      <Pressure data={selectedDay} hourly={hourly} />
     </>
   );
 };
