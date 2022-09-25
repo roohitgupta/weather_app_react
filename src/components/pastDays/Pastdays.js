@@ -7,9 +7,15 @@ const Pastdays = ({ daily }) => {
   const weatherIcon = {
     Rain: "https://weatherapp-swanand.netlify.app/img/cloudy.ac49ed24.svg",
     Clear: "https://weatherapp-swanand.netlify.app/img/sunny.ef428e2d.svg",
+    Clouds: "https://weatherapp-swanand.netlify.app/img/cloudy.ac49ed24.svg"
   };
 
   const [selectedDay, setSelectedDay] = useState({});
+
+  const weekDaysArray = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+  const [weekDay, setWeekDay] = useState("");
+
+  
 
   useEffect(() => {
       setSelectedDay(daily[0]);
@@ -28,7 +34,7 @@ const Pastdays = ({ daily }) => {
               <b>Sun</b>
             </p>
             <h5>
-              <span>{day.temp?.max}</span>,<span>{day.temp?.min}</span>
+              <span>{Math.round(day.temp?.max)}&#176;</span>, <span>{Math.round(day.temp?.min)}&#176;</span>
             </h5>
             <img
               src={weatherIcon[day.weather[0]?.main]}

@@ -9,14 +9,14 @@
     font-size: 30px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
 }
 
 
 
 .search-tag {
-    width: 80%;
+    width: 90%;
     border: none;
-    border-bottom: 2px solid black;
     font-size: large;
     
     
