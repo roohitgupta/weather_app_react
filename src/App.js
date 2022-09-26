@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Searchbox from "./components/searchbox/Searchbox";
 import "./App.css"
 

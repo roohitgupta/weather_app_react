@@ -6,7 +6,6 @@ import { BiSearchAlt2 } from "react-icons/bi";
 // import useGeoLocation from "../useGeoLocation/useGeoLocation";
 
 const Searchbox = () => {
-  const [search, setSearch] = useState("");
   const [daily, setDaily] = useState([]);
   const [hourly, setHourly] = useState([]);
   const [lat, setLat] = useState(0);
