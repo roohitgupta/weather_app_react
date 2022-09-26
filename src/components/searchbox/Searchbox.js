@@ -84,7 +84,7 @@ const Searchbox = () => {
     );
     const data = await response.json(); // Here you have the data that you need
     if (data) {
-      // console.log(data.coord)
+      console.log("datafromname:", data)
       setLat(data.coord.lat);
       setLon(data.coord.lon);
     }
@@ -100,6 +100,7 @@ const Searchbox = () => {
       }
       timer = setTimeout(() => {
         cityDataFetch(value)
+        // console.log(value)
       }, 1500);
 }
 
