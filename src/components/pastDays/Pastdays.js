@@ -16,6 +16,7 @@ const Pastdays = ({ daily, hourly }) => {
 
   useEffect(() => {
       setSelectedDay(daily[0]);
+      console.log("daily:", daily[0])
   }, [daily]);
 
   return (

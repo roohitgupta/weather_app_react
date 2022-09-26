@@ -31,11 +31,11 @@ const Pressure = ({ data, hourly = [] }) => {
 
       <div className="pre-hum">
         <div className="card">
-          <p>Pressure</p>
+          <p><b>Pressure</b></p>
           <p>{data?.pressure} hpa</p>
         </div>
         <div className="card">
-          <p>Humidity</p>
+          <p><b>Humidity</b></p>
           <p>{data?.humidity} %</p>
         </div>
       </div>
@@ -43,9 +43,9 @@ const Pressure = ({ data, hourly = [] }) => {
       <div>
       {data?.sunrise ? (
         <div>
-        {console.log(parseInt(moment.unix(data.sunrise).format('h'))-1)}
+        {/* {console.log(parseInt(moment.unix(data.sunrise).format('h'))-1)}
         {console.log(parseInt(moment.unix(parseInt((data.sunrise+data.sunset)/2)).format('HH'))-1)}
-        {console.log(parseInt(moment.unix(data.sunset).format('HH'))-1)}
+        {console.log(parseInt(moment.unix(data.sunset).format('HH'))-1)} */}
         </div>
       ):null}
       {data?.sunrise ? (

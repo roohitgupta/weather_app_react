@@ -7,7 +7,7 @@ import "./App.css"
 
 // key = 4ebb9418ca605fa1931880e565ec065c
 
-//juened key = e4c70ce6a6821649a416cb9521d5f
+//key = e4c70ce6a6821649a416cb9521d5f
 
 // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 

@@ -11,6 +11,8 @@ const Searchbox = () => {
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
 
+
+// asking for user location 
   const [location, setLocation] = useState({
     loaded: false,
     coordinates: { lat: 0, lng: 0 },
@@ -37,6 +39,7 @@ const Searchbox = () => {
     });
   };
 
+
   useEffect(() => {
     if (!("geolocation" in navigator)) {
       onError({
@@ -48,6 +51,8 @@ const Searchbox = () => {
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
   }, []);
 
+
+  // fetching with latitue and langitute data
   async function fetchReq(lat, lon) {
     try {
       const res = await fetch(
@@ -71,6 +76,8 @@ const Searchbox = () => {
     setLon(location?.coordinates?.lng);
   }, [location]);
 
+
+  // fetching with city name and passing the latitue and langitute to above fetching function
   const cityDataFetch = async (cityName) => {
     const response = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=2510dcb54be9c1632e1872eedae0921c`
@@ -84,6 +91,18 @@ const Searchbox = () => {
     // console.log(JSON.stringify(data, null, 2));
   };
 
+
+  // debouncing fucntion for search box with 1.5 seconds delay
+  let timer;
+  const handleSearch = (value) => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(() => {
+        cityDataFetch(value)
+      }, 1500);
+}
+
   return (
     <>
       <div className="container">
@@ -93,7 +112,8 @@ const Searchbox = () => {
         <input
           type="text"
           className="search-tag"
-          onChange={(event) => cityDataFetch(event.target.value)}
+          // onChange={(event) => cityDataFetch(event.target.value)}
+          onChange={(e)=>handleSearch(e.target.value)}
           placeholder="Enter City Here"
         />
         <div className="search-icon">

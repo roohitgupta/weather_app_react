@@ -4,7 +4,7 @@
     height: 30px;
     width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     font-size: 30px;
     padding: 10px;
@@ -15,9 +15,13 @@
 
 
 .search-tag {
-    width: 90%;
+    width: 85%;
     border: none;
     font-size: large;
+    height: 90%;
     
-    
+}
+
+.search-tag:focus, .search-tag:focus{
+    outline: none;
 }
