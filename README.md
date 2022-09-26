@@ -1,3 +1,12 @@
+# Attractive Weather App with Graphaical Interface
+
+
+![weatherApp](https://user-images.githubusercontent.com/96112427/192173541-d3979cfb-1a28-4d70-8123-0a3092c99b38.PNG)
+
+![weatherApp2](https://user-images.githubusercontent.com/96112427/192173562-07a5ae8e-7f2d-4f43-8250-ec727b781cc9.PNG)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -13,6 +22,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+
+
+
 
 ### `npm test`
 
