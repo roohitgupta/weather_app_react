@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Pastdays.css";
-import Pressure from "../pressure/Pressure";
+import Graphs from "../graphs/Graphs";
 import moment from 'moment';
 
 const Pastdays = ({ daily, hourly }) => {
@@ -30,19 +30,19 @@ const Pastdays = ({ daily, hourly }) => {
             <p>
               <b>{moment.unix(day.sunrise).format('ddd')}</b>
             </p>
-            <h5>
-              <span>{Math.round(day.temp?.max)}&#176;</span>, <span>{Math.round(day.temp?.min)}&#176;</span>
-            </h5>
+            <p><b>
+              <span>{Math.round(day.temp?.max)}&#176;</span>, <span>{Math.round(day.temp?.min)}&#176;</span> </b>
+            </p>
             <img
               src={weatherIcon[day.weather[0]?.main]}
-              width="40px"
+              width="35px"
               alt={day.weather[0]?.main}
             />
             <h5>{day.weather[0]?.main}</h5>
           </div>
         ))}
       </div>
-      <Pressure data={selectedDay} hourly={hourly} />
+      <Graphs data={selectedDay} hourly={hourly} />
     </>
   );
 };

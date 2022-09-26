@@ -2,8 +2,6 @@
   margin: auto;
   align-items: center;
   width: 100%;
-  border: 1px solid black;
-  height: 900px;
 }
 
 .main-container {
@@ -16,4 +14,10 @@
   margin: auto;
   position: relative;
   top: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .main-container {
+    width: 90%;
+  }
 }

@@ -1,32 +1,30 @@
-.days-container {
-    width: 90%;
-    height: 130px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow-x: visible;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 * {
     padding: 0;
     margin: 0;
 }
 
+
+.days-container {
+    width: 90%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: scroll;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
 .days-box {
-    width: 15%;
+    width: 20%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px;
+    justify-content: center;
+    padding-left: 7px;
+    padding-right: 7px;
     margin-right: 5px;
     
 }
@@ -34,4 +32,16 @@
     cursor: pointer;
 }
 
+.days-box:active{
+    border: 3px solid cyan;
+
+}
+
+@media only screen and (max-width: 700px) {
+    .days-box {
+      width: 30%;
+      height: 80%;
+      font-size: 1.3vh;
+    }
+  }
 
