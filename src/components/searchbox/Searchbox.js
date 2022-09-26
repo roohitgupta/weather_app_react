@@ -80,7 +80,7 @@ const Searchbox = () => {
   // fetching with city name and passing the latitue and langitute to above fetching function
   const cityDataFetch = async (cityName) => {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=2510dcb54be9c1632e1872eedae0921c`
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=2510dcb54be9c1632e1872eedae0921c`
     );
     const data = await response.json(); // Here you have the data that you need
     if (data) {
